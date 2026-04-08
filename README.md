@@ -146,39 +146,41 @@ Once unicast flow rules are in place, throughput between h1 and h2 should be clo
 ### Screenshot 1 — pingall (0% packet loss)
 All 4 hosts can reach each other. 12/12 pings received.
 
-![pingall result](screenshots/Screenshot_1.png)
+
+![pingall result]
+<img width="525" height="325" alt="Screenshot_1" src="https://github.com/user-attachments/assets/6447acbd-e3e5-472f-9519-fd7f63fe6cb4" />
 
 ### Screenshot 2 — Controller Logs: MAC Learning + Unicast Flows + Stats
 Shows the `[LEARN]`, `[FLOOD]`, and `[UNICAST]` log entries as the controller builds its MAC table and installs forwarding rules. Stats at the bottom confirm packet counts.
 
-![controller normal logs](screenshots/Screenshot_2.png)
+![controller normal logs]
+<img width="320" height="94" alt="Screenshot_2" src="https://github.com/user-attachments/assets/d106a760-f3fc-453b-ae1e-71affb7b1c0b" />
+
 
 ### Screenshot 3 — Broadcast Storm Test Running
-The `broadcast_storm_test.py` script running on h3, sending all 60 frames.
+The `broadcast_storm_test.py` script running on h3, sending all 60 frames.!
 
-![storm test](screenshots/Screenshot_3.png)
+
+![storm test]
+<img width="1258" height="670" alt="Screenshot_3" src="https://github.com/user-attachments/assets/0788477e-10b5-402b-a522-fc945c85e475" />
 
 ### Screenshot 4 — Controller Detects and Blocks the Storm
 First 10 broadcasts get `[FLOOD]`, then the controller fires `[BLOCK]` and installs the drop rule. This is the core SDN logic working.
 
-![block logs](screenshots/Screenshot_4.png)
+![block logs]
+<img width="465" height="85" alt="Screenshot_4" src="https://github.com/user-attachments/assets/8ee957d4-0048-45bc-9d6c-a6065ef86dd4" />
 
 ### Screenshot 5 — Flow Table with Drop Rule
 `ovs-ofctl dump-flows s1` showing the `priority=20, actions=drop` rule installed by the controller.
 
-![flow table drop rule](screenshots/Screenshot_5.png)
+![flow table drop rule]
+<img width="1225" height="626" alt="Screenshot_5" src="https://github.com/user-attachments/assets/ac46c04d-cff5-48a8-96d4-77464d44ecee" />
 
 ### Screenshot 6 — Controller Startup and Initial Packet Processing
 Shows the switch connecting to the controller and the first few `[LEARN]` + `[FLOOD]` events.
 
-![controller startup](screenshots/Screenshot_6.png)
+![controller startup]
+<img width="627" height="54" alt="Screenshot_6" src="https://github.com/user-attachments/assets/0e18864b-381c-414d-890c-9867227f3832" />
 
 ---
 
-## References
-
-1. Ryu SDN Framework Documentation — https://ryu.readthedocs.io/
-2. OpenFlow 1.3 Specification — https://opennetworking.org/
-3. Mininet Documentation — http://mininet.org/
-4. OVS OpenFlow Tutorial — https://github.com/mininet/openflow-tutorial
-5. SDN Hub Tutorials — https://sdnhub.org/tutorials/
