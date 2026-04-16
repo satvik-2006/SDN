@@ -2,7 +2,7 @@
 
 ## Problem Statement
 
-In a normal Ethernet network, broadcast traffic gets flooded out of every switch port — that's just how it works. ARP requests, unknown unicast, all of it. The problem is when this gets out of hand. A single host spamming broadcast frames can kill network performance pretty quickly, and traditional switches have no real way to stop it since they don't have any application-level intelligence.
+In a normal Ethernet network, broadcast traffic gets flooded out of every switch port  that's just how it works. ARP requests, unknown unicast, all of it. The problem is when this gets out of hand. A single host spamming broadcast frames can kill network performance pretty quickly, and traditional switches have no real way to stop it since they don't have any application-level intelligence.
 
 This project builds an SDN-based fix for that using Mininet and a Ryu OpenFlow controller. The idea is:
 - The controller intercepts every unmatched packet via `packet_in`
@@ -12,7 +12,7 @@ This project builds an SDN-based fix for that using Mininet and a Ryu OpenFlow c
 
 The interesting part is watching the flow table change in real time — you can literally see the controller respond to a broadcast storm and shut it down.
 
----
+
 
 ## Topology
 
